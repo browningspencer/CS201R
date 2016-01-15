@@ -1,4 +1,6 @@
-#practice {
-	height: 500px;
-	color: red;
+#header {
+	height: 200px;
+}
+#body{
+	background-color: lightgrey;
 }
