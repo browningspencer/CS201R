@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+    div {
+        padding: 10px;
+    }
+    body {
+        background-image: url("familytree.png");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="todoCtrl">
+
+    <div id="header">
+        <h2  style="color:green; text-align:center; font-family:georgia;"><b>My Family History List</b></h2>
+    </div>
+
+    <form ng-submit="todoAdd()" style="text-align:center;">
+        <input type="text" ng-model="PersonInput" size="20" placeholder="Person">
+        <input type="text" ng-model="FatherInput" size="20" placeholder="Father">
+        <input type="text" ng-model="MotherInput" size="20" placeholder="Mother">
+        <div class="container">
+            <input type="submit" class="btn btn-primary" value="Add New">
+        </div>
+    </form>
+
+    <br>
+
+    <div id="header">
+        <h3  style="color:green; font-family:verdana;">Name List:</h2>
+    </div> 
+
+    <div ng-repeat="x in todoList">
+        <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+    </div>
+
+    <div class="container">
+        <p><button type="button" class="btn btn-primary" ng-click="remove()">Remove marked</button></p>
+    </div>
+
+    <script>
+    var app = angular.module('myApp', []); 
+    app.controller('todoCtrl', function($scope) {
+        $scope.todoList = [{todoText:'Spencer Browning, Frank Browning, Deanna Butler', done:false}];
+
+        $scope.todoAdd = function() {
+            $scope.todoList.push({todoText:$scope.PersonInput + "," + " " + $scope.FatherInput + "," + " " + $scope.MotherInput, done:false});
+            $scope.todoInput = "";
+        };
+
+        $scope.remove = function() {
+            var oldList = $scope.todoList;
+            $scope.todoList = [];
+            angular.forEach(oldList, function(x) {
+                if (!x.done) $scope.todoList.push(x);
+            });
+        };
+    });
+    </script>
+
+</body>
+</html>
