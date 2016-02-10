@@ -1,0 +1,20 @@
+.User-list {
+  list-style: none;
+}
+
+.Avatar {
+  text-align: left;  
+}
+
+
+.Avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.Avatar h4 {
+  text-transform: capitalize;
+  color: blue;
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <meta charset="utf-8">
+  <title>Create New User</title>
+  <script src="angular.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  h1 {color: white;
+    background-color: black;}
+    body {background-color: lightgrey;}
+    </style>
+  </head>
+  <body>
+    <div ng-app='app' ng-controller='mainCtrl'>
+      <h1>Avatar</h1>
+       <img src="http://images7.alphacoders.com/294/294430.jpg" alt="Avatar Elements" style="width: 100px;height:100px;" style="background-color: black">
+      <h2>Create new user</h2>
+      <form name='userForm' ng-submit='addNew(userForm)'>
+        <input placeholder='Name' ng-model='userForm.name'/>
+        <input placeholder='Avatar Element URL' ng-model='userForm.url'/>
+        <button type='submit'>Add New</button>
+      </form>
+      <h3>Current Users</h3>
+
+      <ul class='User-list'>
+        <li ng-repeat='user in users' >
+          <avatar user='user' />
+        </li>
+      </div>
+    </body>
+    </html>
