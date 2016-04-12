@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comments</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+	<script src="javascripts/app.js"></script>
+
+</head>
+<body ng-app="comment" ng-controller="MainCtrl">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="page-header"> 
+				<h1>Comments </h1>
+			</div>
+
+			<form ng-submit="addComment()" style = "margin-top30px;">
+				<input type="text" ng-model="formContent"></input>
+				<button type="submit">Add Comment</button>
+			</form>
+			<div>
+				{{test}}
+			</div>
+			<div ng-repeat="comment in comments | orderBy: '-upvotes'">
+				<span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
+				{{comment.title}} - upvotes: {{comment.upvotes}}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<!--
+<form ng-submit="addMusic()" style = "margin-top30px;">
+				Song Title<input type="text" name="songtitle" ng-model="formContent"></input><br>
+				Album<input type="text" name="album" ng-model="formContent"></input><br>
+				Artist<input type="text" name="artist" ng-model="formContent"></input><br>
+				Genre<input type="text" name="genre" ng-model="formContent"></input><br>
+				Album Cover Art URL<input type="text" name="coverart" ng-model="formContent"></input><br>
+
+<!-
+	<title>My Journal</title>
+
+	<!-JS --><!--
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<! CSS --><!--
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/summernote/dist/summernote.css">
+	<link rel="stylesheet" href="css/style.css"> <!- custom styles -->
+
+	<!-- ANGULAR --><!--
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+
+	<!- ANGULAR CUSTOM --><!--
+	<script src="js/controllers/JournalCtrl.js"></script>
+	<script src="js/controllers/EntryCtrl.js"></script>
+	<script src="js/services/JournalService.js"></script>
+	<script src="js/controllers/SideNavCtrl.js"></script>
+	<script src="js/controllers/FeatureCtrl.js"></script>
+	<script src="js/services/FeatureService.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/custom/js.js"></script>
+</head>
+
+<body ng-app="sampleApp">
+
+
+<h1>HELLO</h1>
+
+
+
+<!- 		<div class="col-md-1" id="side_nav" style="height: 150px;">
+			<h3>Side Nav</h3>
+			<p><a href="/newentry">New Entry</a><p>
+			<p><a href="/">See All</a></p>
+		</div> -->
+<!--
+		<nav class='sidebar sidebar-menu-collapsed'>
+		    <a href='#' id='justify-icon'>
+		      <span class='glyphicon glyphicon-align-justify'></span>
+		    </a>
+		    <ul>
+		      <li class=''>
+		        <a class='expandable' href='/newentry' title='New'>
+		          <span class='glyphicon glyphicon-plus collapsed-element'></span>
+		          <span class='expanded-element'>New Entry</span>
+		        </a>
+		      </li>
+		      <li class="">
+		        <a class='expandable' href='/' title='All'>
+		          <span class='glyphicon glyphicon-th-list collapsed-element'></span>
+		          <span class='expanded-element'>All Entries</span>
+		        </a>
+		      </li>
+		      
+		 </nav>
+		 <!- http://codepen.io/goodywebs/pen/ouhiH/ -->
+<!--
+		 <div id="main" style="margin-left: 70px; margin-right: 20px; z-index: -1">
+
+		 	<div class="row">
+
+
+		 		<div ng-view></div>
+
+
+			</div>
+
+		</div>
+	              
+	
+</body>
+
+</html>
